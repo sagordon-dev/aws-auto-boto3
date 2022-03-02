@@ -26,7 +26,7 @@ for item in xray_disabled:
     response = client.update_function_configuration(
         FunctionName=item, TracingConfig={"Mode": "Active"}
     )
-    # TODO Generate listing with account name, lambda and x-ray enabled
+    # Generate listing with lambda
     xray_enabled.append(item)
 
 print(f"Enabled X-Ray on these Lambda functions: {xray_enabled}")
