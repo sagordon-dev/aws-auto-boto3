@@ -20,7 +20,8 @@ else:
         for item in xray_disabled:
             f.write(f"{item}\n")
 
-# Based upon that report if there are lambdas that do not have x-ray enabled then a task will need to be created to enable x-ray
+# Based upon that report if there are lambdas that do not have x-ray enabled
+# then a task will need to be created to enable x-ray
 for item in xray_disabled:
     response = client.update_function_configuration(
         FunctionName=item, TracingConfig={"Mode": "Active"}
