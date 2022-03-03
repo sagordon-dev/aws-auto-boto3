@@ -1,9 +1,9 @@
 '''
     File name: enabling_aws_xray.py
-    Author: Scott Gordon 
+    Author: Scott Gordon
     Date created: 3/2/2022
     Date last modified: 3/3/2022
-    Python Version: 3.8 
+    Python Version: 3.8
 '''
 import boto3
 
