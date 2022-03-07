@@ -27,8 +27,8 @@ response_iterator = paginator.paginate(
 for functions in response_iterator:
     for key, value in functions.items():
         if key == "Functions":
-            # print(f"VALUES={value}")
             for item in value:
+                # Item validation for X-Ray
                 if item["TracingConfig"]["Mode"] == "PassThrough":
                     xray_disabled.append(item["FunctionName"])
                 else:
