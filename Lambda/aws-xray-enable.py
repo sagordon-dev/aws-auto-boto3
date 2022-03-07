@@ -1,5 +1,5 @@
 '''
-    File name: enabling_aws_xray.py
+    File name: aws-xray-enable.py
     Author: Scott Gordon
     Date created: 3/2/2022
     Date last modified: 3/3/2022
@@ -13,6 +13,8 @@ xray_enabled = []
 # Generate a list of all lambdas that do not have the x-ray component enabled.
 client = boto3.client("lambda", region_name="us-east-1")
 response = client.list_functions()
+
+print(type(response))
 
 for item in response["Functions"]:
     if item["TracingConfig"]["Mode"] == "PassThrough":
